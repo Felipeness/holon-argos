@@ -22,6 +22,9 @@ const start = async () => {
   await app.listen({ port: 8080, host: "0.0.0.0" })
 }
 
-start()
+const isDirectRun = process.argv[1]?.includes("server")
+if (isDirectRun) {
+  start()
+}
 
 export { buildServer }
