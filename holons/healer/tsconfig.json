@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "."
+  },
+  "include": ["domain", "api", "infra", "resilience"],
+  "references": [
+    { "path": "../../packages/shared" },
+    { "path": "../../packages/graph-memory" },
+    { "path": "../../packages/blueprint-engine" },
+    { "path": "../../packages/holon-runtime" },
+    { "path": "../../packages/circuit-breaker" },
+    { "path": "../../packages/observability" },
+    { "path": "../../packages/temporal-workflows" }
+  ]
+}

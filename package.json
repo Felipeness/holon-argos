@@ -1,0 +1,36 @@
+{
+  "name": "orchestrix-agents",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.14.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write \"**/*.{ts,json,md}\"",
+    "check": "tsc -b --noEmit"
+  },
+  "dependencies": {
+    "@effect/platform": "^0.95.0",
+    "@effect/schema": "^0.75.5",
+    "@vitest/coverage-v8": "^4.1.0",
+    "effect": "^3.20.0",
+    "ts-pattern": "^5.9.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@typescript-eslint/eslint-plugin": "^8.57.1",
+    "@typescript-eslint/parser": "^8.57.1",
+    "eslint": "^10.0.3",
+    "prettier": "^3.8.1",
+    "tsx": "^4.21.0"
+  }
+}

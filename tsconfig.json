@@ -1,0 +1,17 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/shared" },
+    { "path": "packages/graph-memory" },
+    { "path": "packages/blueprint-engine" },
+    { "path": "packages/holon-runtime" },
+    { "path": "packages/circuit-breaker" },
+    { "path": "packages/observability" },
+    { "path": "packages/temporal-workflows" },
+    { "path": "holons/sentinel" },
+    { "path": "holons/diagnostician" },
+    { "path": "holons/healer" },
+    { "path": "holons/historian" },
+    { "path": "holons/coordinator" }
+  ]
+}
