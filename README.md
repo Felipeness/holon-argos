@@ -1,6 +1,6 @@
 # holon-argos
 
-[![Tests](https://img.shields.io/badge/tests-264%20passing-brightgreen)]()
+[![Tests](https://img.shields.io/badge/tests-283%20passing-brightgreen)]()
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue)]()
 [![Effect-TS](https://img.shields.io/badge/Effect--TS-v3-purple)]()
 [![License](https://img.shields.io/badge/license-MIT-green)]()
@@ -160,6 +160,8 @@ The API starts on `http://localhost:8080`.
 | GET | `/api/v1/graph/entities` | List graph entities |
 | GET | `/api/v1/graph/entities/:id/traverse` | Traverse graph from entity |
 | GET | `/api/v1/graph/stats` | Graph memory statistics |
+| POST | `/webhooks/prometheus` | Prometheus AlertManager webhook intake |
+| POST | `/webhooks/pagerduty` | PagerDuty v3 webhook intake |
 
 ### POST /api/v1/incidents
 
@@ -239,6 +241,48 @@ Response (full pipeline output):
 
 The response shows the full incident pipeline: severity classification (P1), routing decision, auto-approval for critical incidents, root cause hypothesis with evidence needed, and event count from the historian.
 
+### Webhook Integrations
+
+Real webhook endpoints for Prometheus AlertManager and PagerDuty. Alerts pass through the sentinel pipeline (noise filtering, correlation, severity classification).
+
+```bash
+# Prometheus AlertManager webhook
+curl -s -X POST http://localhost:8080/webhooks/prometheus \
+  -H "Content-Type: application/json" \
+  -d '{
+    "version": "4",
+    "status": "firing",
+    "alerts": [{
+      "status": "firing",
+      "labels": {"alertname": "HighMemoryUsage", "service": "payment-api", "severity": "critical", "tier": "critical", "impact": "40"},
+      "annotations": {"summary": "Payment API memory usage above 90%"},
+      "startsAt": "2026-03-18T12:00:00Z",
+      "endsAt": "0001-01-01T00:00:00Z",
+      "fingerprint": "abc123"
+    }]
+  }'
+
+# PagerDuty v3 webhook
+curl -s -X POST http://localhost:8080/webhooks/pagerduty \
+  -H "Content-Type: application/json" \
+  -d '{
+    "event": {
+      "id": "evt-123",
+      "event_type": "incident.triggered",
+      "resource_type": "incident",
+      "occurred_at": "2026-03-18T12:00:00Z",
+      "data": {
+        "id": "inc-456",
+        "type": "incident",
+        "title": "High CPU on checkout service",
+        "status": "triggered",
+        "urgency": "high",
+        "service": {"id": "svc-1", "name": "checkout-service"}
+      }
+    }
+  }'
+```
+
 ---
 
 ## Graph Memory Schema
@@ -267,7 +311,7 @@ Transitions are validated by the blueprint engine DFA. Invalid transitions produ
 
 ## Testes / Tests
 
-264 testes passando / 264 tests passing
+283 testes passando / 283 tests passing
 
 ```bash
 pnpm test              # run all tests
