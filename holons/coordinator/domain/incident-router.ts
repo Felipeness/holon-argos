@@ -1,7 +1,7 @@
 import { Effect } from "effect"
-import type { IncidentStatus, HolonRole } from "@orchestrix/shared"
-import { INCIDENT_STATUS, HOLON_ROLES, InvalidTransition } from "@orchestrix/shared"
-import { canTransition, transition } from "@orchestrix/blueprint-engine"
+import type { IncidentStatus, HolonRole } from "@argos/shared"
+import { INCIDENT_STATUS, HOLON_ROLES, InvalidTransition } from "@argos/shared"
+import { canTransition, transition } from "@argos/blueprint-engine"
 
 export interface RoutingDecision {
   readonly from: IncidentStatus

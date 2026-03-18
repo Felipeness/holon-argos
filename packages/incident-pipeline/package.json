@@ -1,5 +1,5 @@
 {
-  "name": "@orchestrix/incident-pipeline",
+  "name": "@argos/incident-pipeline",
   "version": "0.1.0",
   "type": "module",
   "main": "dist/index.js",
@@ -15,7 +15,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@orchestrix/shared": "workspace:*",
-    "@orchestrix/graph-memory": "workspace:*"
+    "@argos/shared": "workspace:*",
+    "@argos/graph-memory": "workspace:*"
   }
 }

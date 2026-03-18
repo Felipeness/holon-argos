@@ -1,4 +1,4 @@
-import type { Severity } from "@orchestrix/shared"
+import type { Severity } from "@argos/shared"
 
 export interface IncidentTimestamp {
   readonly incidentId: string

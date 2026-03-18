@@ -1,17 +1,17 @@
 {
-  "name": "@orchestrix/historian",
+  "name": "@argos/historian",
   "version": "0.1.0",
   "type": "module",
   "main": "dist/domain/index.js",
   "types": "dist/domain/index.d.ts",
   "dependencies": {
-    "@orchestrix/shared": "workspace:*",
-    "@orchestrix/graph-memory": "workspace:*",
-    "@orchestrix/blueprint-engine": "workspace:*",
-    "@orchestrix/holon-runtime": "workspace:*",
-    "@orchestrix/circuit-breaker": "workspace:*",
-    "@orchestrix/observability": "workspace:*",
-    "@orchestrix/temporal-workflows": "workspace:*"
+    "@argos/shared": "workspace:*",
+    "@argos/graph-memory": "workspace:*",
+    "@argos/blueprint-engine": "workspace:*",
+    "@argos/holon-runtime": "workspace:*",
+    "@argos/circuit-breaker": "workspace:*",
+    "@argos/observability": "workspace:*",
+    "@argos/temporal-workflows": "workspace:*"
   },
   "scripts": {
     "build": "tsc -b",

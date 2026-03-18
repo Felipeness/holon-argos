@@ -1,6 +1,6 @@
 import { Context, Effect } from "effect"
-import type { IncidentStatus, Severity } from "@orchestrix/shared"
-import type { IncidentSagaState } from "@orchestrix/temporal-workflows"
+import type { IncidentStatus, Severity } from "@argos/shared"
+import type { IncidentSagaState } from "@argos/temporal-workflows"
 
 export interface IncidentSummary {
   readonly incidentId: string

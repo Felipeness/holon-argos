@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest"
 import { evaluateApproval, APPROVAL_DECISION } from "../domain/approval-gate.js"
 import { RISK_LEVEL, type RiskLevel } from "../domain/blast-radius.js"
-import type { Severity } from "@orchestrix/shared"
+import type { Severity } from "@argos/shared"
 
 describe("evaluateApproval", () => {
   const cases: Array<{

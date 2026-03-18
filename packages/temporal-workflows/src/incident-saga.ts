@@ -1,4 +1,4 @@
-import type { IncidentStatus, Severity } from "@orchestrix/shared"
+import type { IncidentStatus, Severity } from "@argos/shared"
 
 export interface IncidentContext {
   readonly incidentId: string

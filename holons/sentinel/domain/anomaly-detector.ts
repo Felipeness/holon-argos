@@ -1,4 +1,4 @@
-import type { ServiceId } from "@orchestrix/shared"
+import type { ServiceId } from "@argos/shared"
 
 export const ANOMALY_STATUS = {
   DETECTED: "DETECTED",

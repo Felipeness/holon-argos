@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest"
 import { Effect, Exit } from "effect"
-import { INCIDENT_STATUS, HOLON_ROLES } from "@orchestrix/shared"
+import { INCIDENT_STATUS, HOLON_ROLES } from "@argos/shared"
 import { routeIncident, isValidTransition, getTargetHolon } from "../domain/incident-router.js"
 
 describe("incident-router", () => {

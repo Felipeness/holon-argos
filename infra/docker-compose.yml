@@ -4,14 +4,14 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_DB: orchestrix
-      POSTGRES_USER: orchestrix
-      POSTGRES_PASSWORD: orchestrix_dev
+      POSTGRES_DB: argos
+      POSTGRES_USER: argos
+      POSTGRES_PASSWORD: argos_dev
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U orchestrix"]
+      test: ["CMD-SHELL", "pg_isready -U argos"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -33,8 +33,8 @@ services:
     environment:
       DB: postgres12
       DB_PORT: "5432"
-      POSTGRES_USER: orchestrix
-      POSTGRES_PWD: orchestrix_dev
+      POSTGRES_USER: argos
+      POSTGRES_PWD: argos_dev
       POSTGRES_SEEDS: postgres
     depends_on:
       postgres:

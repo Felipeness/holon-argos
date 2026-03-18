@@ -1,4 +1,4 @@
-name: Orchestrix Agents CI
+name: Holon Argos CI
 
 on:
   push:

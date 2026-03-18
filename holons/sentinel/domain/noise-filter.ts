@@ -1,4 +1,4 @@
-import type { AlertFingerprint } from "@orchestrix/shared"
+import type { AlertFingerprint } from "@argos/shared"
 import type { Alert } from "./index.js"
 
 export interface NoiseFilterConfig {

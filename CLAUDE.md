@@ -1,4 +1,4 @@
-# Orchestrix Agents
+# Holon Argos
 
 Autonomous incident response system using holonic architecture, Effect-TS, Temporal, and Claude Agent SDK.
 
@@ -28,7 +28,7 @@ Each holon is a self-contained agent with domain/api/infra/resilience layers:
 
 ### Fastify API (api/)
 
-Fastify + Effect-TS HTTP server with `/health`, `/api/v1/incidents`, `/api/v1/graph` endpoints. Workspace package `@orchestrix/api`.
+Fastify + Effect-TS HTTP server with `/health`, `/api/v1/incidents`, `/api/v1/graph` endpoints. Workspace package `@argos/api`.
 
 ## Commands
 

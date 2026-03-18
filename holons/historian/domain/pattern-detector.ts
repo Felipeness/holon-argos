@@ -1,5 +1,5 @@
-import type { Entity, Relation } from "@orchestrix/graph-memory"
-import { ENTITY_TYPES, RELATION_TYPES } from "@orchestrix/shared"
+import type { Entity, Relation } from "@argos/graph-memory"
+import { ENTITY_TYPES, RELATION_TYPES } from "@argos/shared"
 
 export interface PatternMatch {
   readonly incidentId: string

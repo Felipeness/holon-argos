@@ -1,5 +1,5 @@
 import { Effect, Ref } from "effect"
-import { CircuitOpen } from "@orchestrix/shared"
+import { CircuitOpen } from "@argos/shared"
 import {
   CIRCUIT_STATE,
   type CircuitBreakerConfig,

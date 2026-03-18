@@ -1,5 +1,5 @@
 {
-  "name": "orchestrix-agents",
+  "name": "holon-argos",
   "private": true,
   "type": "module",
   "packageManager": "pnpm@10.14.0",

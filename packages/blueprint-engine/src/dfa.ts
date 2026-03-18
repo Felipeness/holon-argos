@@ -1,6 +1,6 @@
 import { Effect } from "effect"
-import type { IncidentStatus } from "@orchestrix/shared"
-import { INCIDENT_STATUS, InvalidTransition } from "@orchestrix/shared"
+import type { IncidentStatus } from "@argos/shared"
+import { INCIDENT_STATUS, InvalidTransition } from "@argos/shared"
 
 type Status = IncidentStatus
 

@@ -1,5 +1,5 @@
 import { Context, Effect } from "effect"
-import type { AlertFingerprint, Severity } from "@orchestrix/shared"
+import type { AlertFingerprint, Severity } from "@argos/shared"
 
 export interface Alert {
   readonly fingerprint: AlertFingerprint

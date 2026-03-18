@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest"
 import { processIncident } from "../src/pipeline.js"
 import type { PipelineInput } from "../src/pipeline.js"
-import { SEVERITY, HOLON_ROLES } from "@orchestrix/shared"
+import { SEVERITY, HOLON_ROLES } from "@argos/shared"
 import { APPROVAL_DECISION } from "../../../holons/healer/domain/approval-gate.js"
 
 const buildInput = (overrides: Partial<PipelineInput> = {}): PipelineInput => ({

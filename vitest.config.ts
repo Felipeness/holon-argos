@@ -4,14 +4,14 @@ import path from "path"
 export default defineConfig({
   resolve: {
     alias: {
-      "@orchestrix/shared": path.resolve(__dirname, "packages/shared/src/index.ts"),
-      "@orchestrix/graph-memory": path.resolve(__dirname, "packages/graph-memory/src/index.ts"),
-      "@orchestrix/blueprint-engine": path.resolve(__dirname, "packages/blueprint-engine/src/index.ts"),
-      "@orchestrix/holon-runtime": path.resolve(__dirname, "packages/holon-runtime/src/index.ts"),
-      "@orchestrix/circuit-breaker": path.resolve(__dirname, "packages/circuit-breaker/src/index.ts"),
-      "@orchestrix/observability": path.resolve(__dirname, "packages/observability/src/index.ts"),
-      "@orchestrix/temporal-workflows": path.resolve(__dirname, "packages/temporal-workflows/src/index.ts"),
-      "@orchestrix/incident-pipeline": path.resolve(__dirname, "packages/incident-pipeline/src/index.ts"),
+      "@argos/shared": path.resolve(__dirname, "packages/shared/src/index.ts"),
+      "@argos/graph-memory": path.resolve(__dirname, "packages/graph-memory/src/index.ts"),
+      "@argos/blueprint-engine": path.resolve(__dirname, "packages/blueprint-engine/src/index.ts"),
+      "@argos/holon-runtime": path.resolve(__dirname, "packages/holon-runtime/src/index.ts"),
+      "@argos/circuit-breaker": path.resolve(__dirname, "packages/circuit-breaker/src/index.ts"),
+      "@argos/observability": path.resolve(__dirname, "packages/observability/src/index.ts"),
+      "@argos/temporal-workflows": path.resolve(__dirname, "packages/temporal-workflows/src/index.ts"),
+      "@argos/incident-pipeline": path.resolve(__dirname, "packages/incident-pipeline/src/index.ts"),
     },
   },
   test: {

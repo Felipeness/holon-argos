@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest"
-import { ServiceId } from "@orchestrix/shared"
+import { ServiceId } from "@argos/shared"
 import {
   detectAnomaly,
   ANOMALY_STATUS,

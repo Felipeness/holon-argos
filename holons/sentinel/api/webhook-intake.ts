@@ -1,4 +1,4 @@
-import type { AlertFingerprint, Severity } from "@orchestrix/shared"
+import type { AlertFingerprint, Severity } from "@argos/shared"
 
 export const WEBHOOK_SOURCE = {
   PROMETHEUS: "prometheus",

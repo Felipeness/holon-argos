@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest"
-import { AlertFingerprint, SEVERITY } from "@orchestrix/shared"
+import { AlertFingerprint, SEVERITY } from "@argos/shared"
 import { filterNoise, type NoiseFilterConfig } from "../domain/noise-filter.js"
 import type { Alert } from "../domain/index.js"
 

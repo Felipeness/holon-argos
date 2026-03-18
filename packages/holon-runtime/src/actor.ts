@@ -1,5 +1,5 @@
 import { Effect, Ref } from "effect"
-import type { HolonRole } from "@orchestrix/shared"
+import type { HolonRole } from "@argos/shared"
 import type { Message, Mailbox } from "./mailbox.js"
 import { makeMailbox } from "./mailbox.js"
 

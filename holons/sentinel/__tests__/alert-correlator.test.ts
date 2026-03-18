@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest"
-import { AlertFingerprint } from "@orchestrix/shared"
-import { SEVERITY } from "@orchestrix/shared"
+import { AlertFingerprint } from "@argos/shared"
+import { SEVERITY } from "@argos/shared"
 import { correlateAlerts } from "../domain/alert-correlator.js"
 import type { Alert } from "../domain/index.js"
 

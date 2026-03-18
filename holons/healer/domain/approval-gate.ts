@@ -1,4 +1,4 @@
-import type { Severity } from "@orchestrix/shared"
+import type { Severity } from "@argos/shared"
 import { RISK_LEVEL, type RiskLevel } from "./blast-radius.js"
 
 export const APPROVAL_DECISION = {

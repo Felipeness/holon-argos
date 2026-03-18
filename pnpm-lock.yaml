@@ -54,18 +54,18 @@ importers:
 
   api:
     dependencies:
+      '@argos/graph-memory':
+        specifier: workspace:*
+        version: link:../packages/graph-memory
+      '@argos/observability':
+        specifier: workspace:*
+        version: link:../packages/observability
+      '@argos/shared':
+        specifier: workspace:*
+        version: link:../packages/shared
       '@fastify/cors':
         specifier: ^10.0.0
         version: 10.1.0
-      '@orchestrix/graph-memory':
-        specifier: workspace:*
-        version: link:../packages/graph-memory
-      '@orchestrix/observability':
-        specifier: workspace:*
-        version: link:../packages/observability
-      '@orchestrix/shared':
-        specifier: workspace:*
-        version: link:../packages/shared
       effect:
         specifier: ^3.20.0
         version: 3.20.0
@@ -85,160 +85,160 @@ importers:
 
   holons/coordinator:
     dependencies:
-      '@orchestrix/blueprint-engine':
+      '@argos/blueprint-engine':
         specifier: workspace:*
         version: link:../../packages/blueprint-engine
-      '@orchestrix/circuit-breaker':
+      '@argos/circuit-breaker':
         specifier: workspace:*
         version: link:../../packages/circuit-breaker
-      '@orchestrix/graph-memory':
+      '@argos/graph-memory':
         specifier: workspace:*
         version: link:../../packages/graph-memory
-      '@orchestrix/holon-runtime':
+      '@argos/holon-runtime':
         specifier: workspace:*
         version: link:../../packages/holon-runtime
-      '@orchestrix/observability':
+      '@argos/observability':
         specifier: workspace:*
         version: link:../../packages/observability
-      '@orchestrix/shared':
+      '@argos/shared':
         specifier: workspace:*
         version: link:../../packages/shared
-      '@orchestrix/temporal-workflows':
+      '@argos/temporal-workflows':
         specifier: workspace:*
         version: link:../../packages/temporal-workflows
 
   holons/diagnostician:
     dependencies:
-      '@orchestrix/blueprint-engine':
+      '@argos/blueprint-engine':
         specifier: workspace:*
         version: link:../../packages/blueprint-engine
-      '@orchestrix/circuit-breaker':
+      '@argos/circuit-breaker':
         specifier: workspace:*
         version: link:../../packages/circuit-breaker
-      '@orchestrix/graph-memory':
+      '@argos/graph-memory':
         specifier: workspace:*
         version: link:../../packages/graph-memory
-      '@orchestrix/holon-runtime':
+      '@argos/holon-runtime':
         specifier: workspace:*
         version: link:../../packages/holon-runtime
-      '@orchestrix/observability':
+      '@argos/observability':
         specifier: workspace:*
         version: link:../../packages/observability
-      '@orchestrix/shared':
+      '@argos/shared':
         specifier: workspace:*
         version: link:../../packages/shared
-      '@orchestrix/temporal-workflows':
+      '@argos/temporal-workflows':
         specifier: workspace:*
         version: link:../../packages/temporal-workflows
 
   holons/healer:
     dependencies:
-      '@orchestrix/blueprint-engine':
+      '@argos/blueprint-engine':
         specifier: workspace:*
         version: link:../../packages/blueprint-engine
-      '@orchestrix/circuit-breaker':
+      '@argos/circuit-breaker':
         specifier: workspace:*
         version: link:../../packages/circuit-breaker
-      '@orchestrix/graph-memory':
+      '@argos/graph-memory':
         specifier: workspace:*
         version: link:../../packages/graph-memory
-      '@orchestrix/holon-runtime':
+      '@argos/holon-runtime':
         specifier: workspace:*
         version: link:../../packages/holon-runtime
-      '@orchestrix/observability':
+      '@argos/observability':
         specifier: workspace:*
         version: link:../../packages/observability
-      '@orchestrix/shared':
+      '@argos/shared':
         specifier: workspace:*
         version: link:../../packages/shared
-      '@orchestrix/temporal-workflows':
+      '@argos/temporal-workflows':
         specifier: workspace:*
         version: link:../../packages/temporal-workflows
 
   holons/historian:
     dependencies:
-      '@orchestrix/blueprint-engine':
+      '@argos/blueprint-engine':
         specifier: workspace:*
         version: link:../../packages/blueprint-engine
-      '@orchestrix/circuit-breaker':
+      '@argos/circuit-breaker':
         specifier: workspace:*
         version: link:../../packages/circuit-breaker
-      '@orchestrix/graph-memory':
+      '@argos/graph-memory':
         specifier: workspace:*
         version: link:../../packages/graph-memory
-      '@orchestrix/holon-runtime':
+      '@argos/holon-runtime':
         specifier: workspace:*
         version: link:../../packages/holon-runtime
-      '@orchestrix/observability':
+      '@argos/observability':
         specifier: workspace:*
         version: link:../../packages/observability
-      '@orchestrix/shared':
+      '@argos/shared':
         specifier: workspace:*
         version: link:../../packages/shared
-      '@orchestrix/temporal-workflows':
+      '@argos/temporal-workflows':
         specifier: workspace:*
         version: link:../../packages/temporal-workflows
 
   holons/sentinel:
     dependencies:
-      '@orchestrix/blueprint-engine':
+      '@argos/blueprint-engine':
         specifier: workspace:*
         version: link:../../packages/blueprint-engine
-      '@orchestrix/circuit-breaker':
+      '@argos/circuit-breaker':
         specifier: workspace:*
         version: link:../../packages/circuit-breaker
-      '@orchestrix/graph-memory':
+      '@argos/graph-memory':
         specifier: workspace:*
         version: link:../../packages/graph-memory
-      '@orchestrix/holon-runtime':
+      '@argos/holon-runtime':
         specifier: workspace:*
         version: link:../../packages/holon-runtime
-      '@orchestrix/observability':
+      '@argos/observability':
         specifier: workspace:*
         version: link:../../packages/observability
-      '@orchestrix/shared':
+      '@argos/shared':
         specifier: workspace:*
         version: link:../../packages/shared
-      '@orchestrix/temporal-workflows':
+      '@argos/temporal-workflows':
         specifier: workspace:*
         version: link:../../packages/temporal-workflows
 
   packages/blueprint-engine:
     dependencies:
-      '@orchestrix/shared':
+      '@argos/shared':
         specifier: workspace:*
         version: link:../shared
 
   packages/circuit-breaker:
     dependencies:
-      '@orchestrix/shared':
+      '@argos/shared':
         specifier: workspace:*
         version: link:../shared
 
   packages/graph-memory:
     dependencies:
-      '@orchestrix/shared':
+      '@argos/shared':
         specifier: workspace:*
         version: link:../shared
 
   packages/holon-runtime:
     dependencies:
-      '@orchestrix/shared':
+      '@argos/shared':
         specifier: workspace:*
         version: link:../shared
 
   packages/incident-pipeline:
     dependencies:
-      '@orchestrix/graph-memory':
+      '@argos/graph-memory':
         specifier: workspace:*
         version: link:../graph-memory
-      '@orchestrix/shared':
+      '@argos/shared':
         specifier: workspace:*
         version: link:../shared
 
   packages/observability:
     dependencies:
-      '@orchestrix/shared':
+      '@argos/shared':
         specifier: workspace:*
         version: link:../shared
 
@@ -246,7 +246,7 @@ importers:
 
   packages/temporal-workflows:
     dependencies:
-      '@orchestrix/shared':
+      '@argos/shared':
         specifier: workspace:*
         version: link:../shared
 

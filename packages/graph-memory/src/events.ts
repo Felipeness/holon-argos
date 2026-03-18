@@ -1,4 +1,4 @@
-import type { EntityType, RelationType } from "@orchestrix/shared"
+import type { EntityType, RelationType } from "@argos/shared"
 
 export type GraphEvent =
   | EntityCreated

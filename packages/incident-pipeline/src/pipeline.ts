@@ -1,13 +1,13 @@
-import type { Severity } from "@orchestrix/shared"
-import { SEVERITY, CorrelationId, HolonId } from "@orchestrix/shared"
-import type { GraphEvent } from "@orchestrix/graph-memory"
+import type { Severity } from "@argos/shared"
+import { SEVERITY, CorrelationId, HolonId } from "@argos/shared"
+import type { GraphEvent } from "@argos/graph-memory"
 import {
   classifySeverity,
   SERVICE_TIER,
 } from "../../../holons/sentinel/domain/severity-classifier.js"
 import type { IncidentContext } from "../../../holons/sentinel/domain/severity-classifier.js"
 import { getTargetHolon } from "../../../holons/coordinator/domain/incident-router.js"
-import { INCIDENT_STATUS } from "@orchestrix/shared"
+import { INCIDENT_STATUS } from "@argos/shared"
 import {
   generateHypotheses,
 } from "../../../holons/diagnostician/domain/hypothesis-generator.js"

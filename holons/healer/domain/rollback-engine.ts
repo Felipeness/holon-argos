@@ -1,4 +1,4 @@
-import type { SagaStep } from "@orchestrix/blueprint-engine"
+import type { SagaStep } from "@argos/blueprint-engine"
 import { Effect } from "effect"
 
 export interface RemediationAction {

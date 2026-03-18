@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest"
 import { assessBlastRadius, RISK_LEVEL, type ServiceGraph } from "../domain/blast-radius.js"
-import type { RemediationPlan } from "@orchestrix/temporal-workflows"
+import type { RemediationPlan } from "@argos/temporal-workflows"
 
 const simplePlan: RemediationPlan = {
   steps: [{ name: "restart", action: "restart-pod", params: {}, timeoutMs: 30_000 }],

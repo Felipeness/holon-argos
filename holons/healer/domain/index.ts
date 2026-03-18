@@ -1,6 +1,6 @@
 import { Context, Effect } from "effect"
-import type { RemediationFailed, RollbackFailed } from "@orchestrix/shared"
-import type { RemediationPlan, RemediationStep, VerificationResult } from "@orchestrix/temporal-workflows"
+import type { RemediationFailed, RollbackFailed } from "@argos/shared"
+import type { RemediationPlan, RemediationStep, VerificationResult } from "@argos/temporal-workflows"
 
 export interface HealerDomain {
   readonly buildPlan: (rootCause: string, serviceId: string) => Effect.Effect<RemediationPlan>

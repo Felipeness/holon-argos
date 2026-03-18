@@ -1,4 +1,4 @@
-import type { Relation } from "@orchestrix/graph-memory"
+import type { Relation } from "@argos/graph-memory"
 
 const DECAY_FACTOR = 0.95
 const MS_PER_DAY = 86_400_000

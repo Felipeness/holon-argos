@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest"
 import { Effect, Ref } from "effect"
-import { runSaga } from "@orchestrix/blueprint-engine"
+import { runSaga } from "@argos/blueprint-engine"
 import { buildRollbackPlan, RemediationStepError, type RemediationAction } from "../domain/rollback-engine.js"
 
 describe("buildRollbackPlan", () => {

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest"
-import { INCIDENT_STATUS } from "@orchestrix/shared"
+import { INCIDENT_STATUS } from "@argos/shared"
 import { evaluateEscalation, ESCALATION_TARGETS } from "../domain/escalation-engine.js"
 
 const MINUTE = 60 * 1000

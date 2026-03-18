@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest"
-import { SEVERITY } from "@orchestrix/shared"
+import { SEVERITY } from "@argos/shared"
 import { classifySeverity, SERVICE_TIER, type IncidentContext } from "../domain/severity-classifier.js"
 
 const makeContext = (overrides: Partial<IncidentContext> = {}): IncidentContext => ({

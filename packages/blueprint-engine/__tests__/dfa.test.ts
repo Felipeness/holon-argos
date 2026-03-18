@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest"
 import { Effect, Exit } from "effect"
-import { INCIDENT_STATUS } from "@orchestrix/shared"
+import { INCIDENT_STATUS } from "@argos/shared"
 import { canTransition, transition, validTransitionsFrom, isTerminal } from "../src/dfa.js"
 
 describe("Incident lifecycle DFA", () => {

@@ -1,5 +1,5 @@
-import type { IncidentStatus } from "@orchestrix/shared"
-import { INCIDENT_STATUS } from "@orchestrix/shared"
+import type { IncidentStatus } from "@argos/shared"
+import { INCIDENT_STATUS } from "@argos/shared"
 
 const DIAGNOSIS_TIMEOUT_MS = 5 * 60 * 1000
 const HEALING_TIMEOUT_MS = 10 * 60 * 1000

@@ -1,6 +1,6 @@
-import type { GraphEvent } from "@orchestrix/graph-memory"
-import type { CorrelationId, HolonId } from "@orchestrix/shared"
-import { ENTITY_TYPES, RELATION_TYPES } from "@orchestrix/shared"
+import type { GraphEvent } from "@argos/graph-memory"
+import type { CorrelationId, HolonId } from "@argos/shared"
+import { ENTITY_TYPES, RELATION_TYPES } from "@argos/shared"
 
 export const INCIDENT_EVENT_TYPES = {
   DETECTED: "detected",

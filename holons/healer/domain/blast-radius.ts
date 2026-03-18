@@ -1,4 +1,4 @@
-import type { RemediationPlan } from "@orchestrix/temporal-workflows"
+import type { RemediationPlan } from "@argos/temporal-workflows"
 
 export const RISK_LEVEL = {
   LOW: "LOW",

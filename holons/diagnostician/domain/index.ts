@@ -1,6 +1,6 @@
 import { Context, Effect } from "effect"
-import type { DiagnosisFailed } from "@orchestrix/shared"
-import type { DiagnosisResult } from "@orchestrix/temporal-workflows"
+import type { DiagnosisFailed } from "@argos/shared"
+import type { DiagnosisResult } from "@argos/temporal-workflows"
 
 export interface DiagnosticContext {
   readonly incidentId: string

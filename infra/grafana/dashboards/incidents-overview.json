@@ -54,7 +54,7 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
-          "expr": "sum(orchestrix_incidents_active) by (severity)",
+          "expr": "sum(argos_incidents_active) by (severity)",
           "legendFormat": "{{severity}}",
           "refId": "A"
         }
@@ -99,7 +99,7 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
-          "expr": "rate(orchestrix_incident_acknowledge_seconds_sum[1h]) / rate(orchestrix_incident_acknowledge_seconds_count[1h]) / 60",
+          "expr": "rate(argos_incident_acknowledge_seconds_sum[1h]) / rate(argos_incident_acknowledge_seconds_count[1h]) / 60",
           "legendFormat": "",
           "refId": "A"
         }
@@ -144,7 +144,7 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
-          "expr": "rate(orchestrix_incident_resolve_seconds_sum[1h]) / rate(orchestrix_incident_resolve_seconds_count[1h]) / 60",
+          "expr": "rate(argos_incident_resolve_seconds_sum[1h]) / rate(argos_incident_resolve_seconds_count[1h]) / 60",
           "legendFormat": "",
           "refId": "A"
         }
@@ -184,7 +184,7 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
-          "expr": "sum(orchestrix_remediation_total{result=\"success\"}) / sum(orchestrix_remediation_total)",
+          "expr": "sum(argos_remediation_total{result=\"success\"}) / sum(argos_remediation_total)",
           "legendFormat": "",
           "refId": "A"
         }
@@ -238,7 +238,7 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
-          "expr": "sum(orchestrix_incidents_total) by (severity)",
+          "expr": "sum(argos_incidents_total) by (severity)",
           "legendFormat": "{{severity}}",
           "refId": "A"
         }
@@ -280,7 +280,7 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
-          "expr": "sum(orchestrix_escalations_total) / sum(orchestrix_incidents_total) * 100",
+          "expr": "sum(argos_escalations_total) / sum(argos_incidents_total) * 100",
           "legendFormat": "",
           "refId": "A"
         }
@@ -327,7 +327,7 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
-          "expr": "increase(orchestrix_incidents_total[1h])",
+          "expr": "increase(argos_incidents_total[1h])",
           "legendFormat": "{{severity}}",
           "refId": "A"
         }
@@ -406,7 +406,7 @@
       "targets": [
         {
           "datasource": { "type": "prometheus", "uid": "${DS_PROMETHEUS}" },
-          "expr": "orchestrix_incident_info",
+          "expr": "argos_incident_info",
           "legendFormat": "",
           "refId": "A",
           "format": "table",
@@ -441,7 +441,7 @@
   ],
   "refresh": "10s",
   "schemaVersion": 39,
-  "tags": ["orchestrix", "incidents"],
+  "tags": ["argos", "incidents"],
   "templating": {
     "list": [
       {
@@ -464,6 +464,6 @@
   "timepicker": {},
   "timezone": "browser",
   "title": "Incidents Overview",
-  "uid": "orchestrix-incidents-overview",
+  "uid": "argos-incidents-overview",
   "version": 1
 }

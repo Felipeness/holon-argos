@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest"
-import { CorrelationId, HolonId } from "@orchestrix/shared"
+import { CorrelationId, HolonId } from "@argos/shared"
 import {
   recordIncidentEvent,
   buildEventSequence,

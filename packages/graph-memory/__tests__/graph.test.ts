@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest"
 import { Effect, Exit, Layer } from "effect"
 import { GraphMemoryService, GraphMemoryLayer, InMemoryEventStoreLayer } from "../src/index.js"
-import { ENTITY_TYPES, RELATION_TYPES } from "@orchestrix/shared"
+import { ENTITY_TYPES, RELATION_TYPES } from "@argos/shared"
 
 const TestLayer = GraphMemoryLayer.pipe(Layer.provide(InMemoryEventStoreLayer))
 

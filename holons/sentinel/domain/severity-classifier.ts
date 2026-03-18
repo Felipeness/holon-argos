@@ -1,4 +1,4 @@
-import { type Severity, SEVERITY } from "@orchestrix/shared"
+import { type Severity, SEVERITY } from "@argos/shared"
 
 export const SERVICE_TIER = {
   CRITICAL: "CRITICAL",

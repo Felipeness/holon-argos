@@ -1,4 +1,4 @@
-# orchestrix-agents
+# holon-argos
 
 [![Tests](https://img.shields.io/badge/tests-264%20passing-brightgreen)]()
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue)]()
@@ -7,7 +7,7 @@
 
 ## O que é isso? / What is this?
 
-Quando um sistema cai às 3h da manhã, alguém precisa acordar, olhar logs, entender o que aconteceu, aplicar um fix e verificar se funcionou. O orchestrix-agents faz tudo isso sozinho.
+Quando um sistema cai às 3h da manhã, alguém precisa acordar, olhar logs, entender o que aconteceu, aplicar um fix e verificar se funcionou. O holon-argos faz tudo isso sozinho.
 
 É um sistema de agentes de IA que monitora sua infraestrutura, detecta problemas automaticamente, descobre a causa raiz usando inteligência artificial, e aplica a correção — tudo sem intervenção humana para incidentes críticos. Para problemas menores, ele diagnostica e pede aprovação antes de agir.
 
@@ -15,7 +15,7 @@ Cada agente é um holon especializado: o sentinel vigia, o diagnostician investi
 
 ---
 
-When a system goes down at 3 AM, someone needs to wake up, check logs, understand what happened, apply a fix, and verify it worked. orchestrix-agents does all of this automatically.
+When a system goes down at 3 AM, someone needs to wake up, check logs, understand what happened, apply a fix, and verify it worked. holon-argos does all of this automatically.
 
 It's an AI agent system that monitors your infrastructure, detects problems automatically, discovers root causes using artificial intelligence, and applies fixes — all without human intervention for critical incidents. For less severe issues, it diagnoses and asks for approval before acting.
 
@@ -25,9 +25,9 @@ Each agent is a specialized holon: the sentinel watches, the diagnostician inves
 
 ## O problema que resolve / The problem it solves
 
-Incidentes de produção custam caro — em tempo, em dinheiro e em sono. O MTTR (tempo médio de resolução) médio da indústria é de horas. Com agentes holonômicos que aprendem com incidentes passados via memória em grafo, o orchestrix-agents pode reduzir esse tempo para minutos.
+Incidentes de produção custam caro — em tempo, em dinheiro e em sono. O MTTR (tempo médio de resolução) médio da indústria é de horas. Com agentes holonômicos que aprendem com incidentes passados via memória em grafo, o holon-argos pode reduzir esse tempo para minutos.
 
-Production incidents are expensive — in time, money, and sleep. The industry average MTTR (Mean Time to Resolve) is hours. With holonomic agents that learn from past incidents via graph memory, orchestrix-agents can reduce this to minutes.
+Production incidents are expensive — in time, money, and sleep. The industry average MTTR (Mean Time to Resolve) is hours. With holonomic agents that learn from past incidents via graph memory, holon-argos can reduce this to minutes.
 
 ---
 
@@ -112,7 +112,7 @@ Each holon is a self-contained agent with `domain/`, `api/`, `infra/`, and `resi
 
 ```bash
 # Clone
-git clone <repo-url> && cd orchestrix-agents
+git clone <repo-url> && cd holon-argos
 
 # Install dependencies (requires Node.js >= 22, pnpm)
 pnpm install
@@ -137,14 +137,14 @@ The API starts on `http://localhost:8080`.
 
 | Package | Purpose |
 |---------|---------|
-| `@orchestrix/shared` | Branded types (`IncidentId`, `ServiceId`), tagged errors, domain constants |
-| `@orchestrix/graph-memory` | CQRS + event sourcing graph (entities, relations, projections) |
-| `@orchestrix/blueprint-engine` | DFA for incident lifecycle states, saga execution with compensation |
-| `@orchestrix/holon-runtime` | Actor model (mailbox, message processing, supervisor trees) |
-| `@orchestrix/circuit-breaker` | Circuit breaker (sliding window, 5 failure types) + token bucket rate limiter |
-| `@orchestrix/observability` | Structured logger, metrics collector, OTel-compatible tracing |
-| `@orchestrix/temporal-workflows` | Incident saga types, workflow/activity interfaces, task queues |
-| `@orchestrix/incident-pipeline` | Synchronous pipeline chaining all holon domain functions |
+| `@argos/shared` | Branded types (`IncidentId`, `ServiceId`), tagged errors, domain constants |
+| `@argos/graph-memory` | CQRS + event sourcing graph (entities, relations, projections) |
+| `@argos/blueprint-engine` | DFA for incident lifecycle states, saga execution with compensation |
+| `@argos/holon-runtime` | Actor model (mailbox, message processing, supervisor trees) |
+| `@argos/circuit-breaker` | Circuit breaker (sliding window, 5 failure types) + token bucket rate limiter |
+| `@argos/observability` | Structured logger, metrics collector, OTel-compatible tracing |
+| `@argos/temporal-workflows` | Incident saga types, workflow/activity interfaces, task queues |
+| `@argos/incident-pipeline` | Synchronous pipeline chaining all holon domain functions |
 
 ---
 

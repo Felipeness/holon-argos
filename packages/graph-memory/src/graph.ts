@@ -1,6 +1,6 @@
 import { Context, Effect, Layer } from "effect"
-import type { EntityType, RelationType } from "@orchestrix/shared"
-import { EntityNotFound, DuplicateEntity } from "@orchestrix/shared"
+import type { EntityType, RelationType } from "@argos/shared"
+import { EntityNotFound, DuplicateEntity } from "@argos/shared"
 import { EventStoreService } from "./event-store.js"
 import { buildProjection } from "./projection.js"
 import type { Entity, Relation, GraphQuery, TraversalResult } from "./types.js"

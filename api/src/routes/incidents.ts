@@ -6,8 +6,8 @@ import { evaluateApproval } from "../../../holons/healer/domain/approval-gate.js
 import { RISK_LEVEL } from "../../../holons/healer/domain/blast-radius.js"
 import type { RiskLevel } from "../../../holons/healer/domain/blast-radius.js"
 import { getTargetHolon } from "../../../holons/coordinator/domain/incident-router.js"
-import { INCIDENT_STATUS, SEVERITY } from "@orchestrix/shared"
-import type { Severity, IncidentStatus } from "@orchestrix/shared"
+import { INCIDENT_STATUS, SEVERITY } from "@argos/shared"
+import type { Severity, IncidentStatus } from "@argos/shared"
 import { processIncident } from "../../../packages/incident-pipeline/src/pipeline.js"
 
 type IncidentParams = { id: string }

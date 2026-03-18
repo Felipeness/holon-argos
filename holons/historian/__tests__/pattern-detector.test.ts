@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest"
-import type { Entity, Relation } from "@orchestrix/graph-memory"
-import { ENTITY_TYPES, RELATION_TYPES } from "@orchestrix/shared"
+import type { Entity, Relation } from "@argos/graph-memory"
+import { ENTITY_TYPES, RELATION_TYPES } from "@argos/shared"
 import { detectPatterns } from "../domain/pattern-detector.js"
 
 const makeIncident = (id: string, createdAt: number, metadata: Record<string, unknown> = {}): Entity => ({

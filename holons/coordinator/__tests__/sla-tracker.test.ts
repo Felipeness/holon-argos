@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest"
-import { SEVERITY } from "@orchestrix/shared"
+import { SEVERITY } from "@argos/shared"
 import { calculateSLAMetrics, calculateAllSeverities } from "../domain/sla-tracker.js"
 import type { IncidentTimestamp } from "../domain/sla-tracker.js"
 

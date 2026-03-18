@@ -1,4 +1,4 @@
-import type { EntityType, RelationType } from "@orchestrix/shared"
+import type { EntityType, RelationType } from "@argos/shared"
 
 export interface Entity {
   readonly id: string

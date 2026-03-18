@@ -1,5 +1,5 @@
 {
-  "name": "@orchestrix/circuit-breaker",
+  "name": "@argos/circuit-breaker",
   "version": "0.1.0",
   "type": "module",
   "main": "dist/index.js",
@@ -11,7 +11,7 @@
     }
   },
   "dependencies": {
-    "@orchestrix/shared": "workspace:*"
+    "@argos/shared": "workspace:*"
   },
   "scripts": {
     "build": "tsc -b",
