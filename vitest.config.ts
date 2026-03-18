@@ -14,7 +14,7 @@ export default defineConfig({
     },
   },
   test: {
-    include: ["packages/**/__tests__/**/*.test.ts", "holons/**/__tests__/**/*.test.ts"],
+    include: ["packages/**/__tests__/**/*.test.ts", "holons/**/__tests__/**/*.test.ts", "api/**/__tests__/**/*.test.ts"],
     coverage: {
       provider: "v8",
       include: ["packages/*/src/**/*.ts", "holons/*/domain/**/*.ts"],

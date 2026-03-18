@@ -4,7 +4,7 @@ Autonomous incident response system using holonic architecture, Effect-TS, Tempo
 
 ## Architecture
 
-TypeScript + Go monorepo. TypeScript handles domain logic (Effect-TS), workflow orchestration (Temporal), and agent intelligence. Go provides the HTTP API layer.
+TypeScript monorepo. Effect-TS for domain logic, Temporal for workflow orchestration, Fastify for the HTTP API layer, Claude Agent SDK for agent intelligence.
 
 ### Packages (packages/*)
 
@@ -26,9 +26,9 @@ Each holon is a self-contained agent with domain/api/infra/resilience layers:
 - **historian** - Postmortem generation, incident timeline, knowledge graph
 - **coordinator** - Saga orchestration, escalation, active incident management
 
-### Go API (api/)
+### Fastify API (api/)
 
-Minimal HTTP server with `/health`, `/api/v1/incidents` endpoints. Stub for now.
+Fastify + Effect-TS HTTP server with `/health`, `/api/v1/incidents`, `/api/v1/graph` endpoints. Workspace package `@orchestrix/api`.
 
 ## Commands
 
@@ -38,8 +38,9 @@ pnpm build         # typecheck via tsc -b
 pnpm lint          # eslint
 pnpm format        # prettier
 
-cd api && go build ./...   # build Go API
-cd api && go test ./...    # test Go API
+cd api && pnpm dev         # dev server with hot reload
+cd api && pnpm build       # build API
+cd api && pnpm start       # start built API
 ```
 
 ## Infrastructure

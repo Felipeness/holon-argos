@@ -12,6 +12,7 @@
     { "path": "holons/diagnostician" },
     { "path": "holons/healer" },
     { "path": "holons/historian" },
-    { "path": "holons/coordinator" }
+    { "path": "holons/coordinator" },
+    { "path": "api" }
   ]
 }
