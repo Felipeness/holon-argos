@@ -1,10 +1,37 @@
-# Orchestrix Agents
+# orchestrix-agents
 
-Autonomous incident response system using holonic architecture. Five self-contained agents (holons) collaborate through a pipeline to detect, diagnose, and remediate production incidents with minimal human intervention.
+[![Tests](https://img.shields.io/badge/tests-264%20passing-brightgreen)]()
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue)]()
+[![Effect-TS](https://img.shields.io/badge/Effect--TS-v3-purple)]()
+[![License](https://img.shields.io/badge/license-MIT-green)]()
 
-Built with Effect-TS for composable domain logic, Temporal for durable workflow orchestration, Fastify for the HTTP API layer, and event-sourced graph memory for knowledge retention.
+## O que e isso? / What is this?
 
-## Architecture
+Quando um sistema cai as 3h da manha, alguem precisa acordar, olhar logs, entender o que aconteceu, aplicar um fix e verificar se funcionou. O orchestrix-agents faz tudo isso sozinho.
+
+E um sistema de agentes de IA que monitora sua infraestrutura, detecta problemas automaticamente, descobre a causa raiz usando inteligencia artificial, e aplica a correcao — tudo sem intervencao humana para incidentes criticos. Para problemas menores, ele diagnostica e pede aprovacao antes de agir.
+
+Cada agente e um holon especializado: o sentinel vigia, o diagnostician investiga, o healer corrige, e o historian aprende com cada incidente para ser mais inteligente no proximo.
+
+---
+
+When a system goes down at 3 AM, someone needs to wake up, check logs, understand what happened, apply a fix, and verify it worked. orchestrix-agents does all of this automatically.
+
+It's an AI agent system that monitors your infrastructure, detects problems automatically, discovers root causes using artificial intelligence, and applies fixes — all without human intervention for critical incidents. For less severe issues, it diagnoses and asks for approval before acting.
+
+Each agent is a specialized holon: the sentinel watches, the diagnostician investigates, the healer fixes, and the historian learns from each incident to be smarter next time.
+
+---
+
+## O problema que resolve / The problem it solves
+
+Incidentes de producao custam caro — em tempo, em dinheiro e em sono. O MTTR (tempo medio de resolucao) medio da industria e de horas. Com agentes holonomicos que aprendem com incidentes passados via memoria em grafo, o orchestrix-agents pode reduzir esse tempo para minutos.
+
+Production incidents are expensive — in time, money, and sleep. The industry average MTTR (Mean Time to Resolve) is hours. With holonomic agents that learn from past incidents via graph memory, orchestrix-agents can reduce this to minutes.
+
+---
+
+## Como funciona (resumo visual) / How it works (visual summary)
 
 ```
                          +-----------+
@@ -35,6 +62,52 @@ Built with Effect-TS for composable domain logic, Temporal for durable workflow 
                 -> healer.remediate -> historian.record
 ```
 
+---
+
+## Arquitetura / Architecture
+
+Each holon is a self-contained agent with `domain/`, `api/`, `infra/`, and `resilience/` layers.
+
+| Holon | Role | Key Functions |
+|-------|------|---------------|
+| **Sentinel** | Deteccao e intake / Detection & intake | Severity classification, anomaly detection, alert correlation, noise filtering |
+| **Coordinator** | Orquestracao / Orchestration | Incident routing (DFA), SLA tracking, escalation engine |
+| **Diagnostician** | Analise de causa raiz / Root cause analysis | Hypothesis generation, evidence ranking, runbook matching |
+| **Healer** | Remediacao / Remediation | Blast radius assessment, approval gate, rollback engine |
+| **Historian** | Retencao de conhecimento / Knowledge retention | Incident recording, pattern detection, knowledge decay |
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| Runtime | Node.js >= 22, TypeScript 5.9 (strict mode, branded types) |
+| Domain logic | Effect-TS v3 (`Effect.gen`, `Context.Tag`, `Layer`, tagged errors) |
+| Workflows | Temporal (saga orchestration, durable execution) |
+| HTTP | Fastify 5 |
+| Observability | OpenTelemetry collector, Grafana |
+| Storage | PostgreSQL 16, Redis 7 |
+| Testing | Vitest 4 |
+| Monorepo | pnpm workspaces, TypeScript project references |
+
+---
+
+## Design Patterns
+
+- **Holonic architecture** -- self-contained agents with domain/api/infra/resilience layers
+- **Functional core, imperative shell** -- pure domain functions at the center, side effects at boundaries
+- **Event sourcing + CQRS** -- graph state from event replay, projections for reads
+- **Saga pattern** -- multi-step remediation with compensation (rollback)
+- **Circuit breaker** -- fault isolation for external service calls
+- **Actor model** -- mailbox-based message processing with supervisor trees
+- **Branded types** -- `IncidentId`, `ServiceId`, etc. prevent primitive confusion at compile time
+- **Tagged errors** -- `IncidentNotFound`, `DiagnosisFailed`, etc. for exhaustive error handling
+- **DFA state machine** -- validated incident lifecycle transitions
+- **Knowledge decay** -- relation weights decrease over time, keeping the graph relevant
+
+---
+
 ## Quick Start
 
 ```bash
@@ -56,30 +129,37 @@ pnpm test
 
 The API starts on `http://localhost:8080`.
 
-## Holons
+---
 
-Each holon is a self-contained agent with `domain/`, `api/`, `infra/`, and `resilience/` layers.
+## Estrutura do Projeto / Project Structure
 
-| Holon           | Role                | Key Functions                                                      |
-|-----------------|---------------------|--------------------------------------------------------------------|
-| **Sentinel**    | Detection & intake  | Severity classification, anomaly detection, alert correlation, noise filtering |
-| **Coordinator** | Orchestration       | Incident routing (DFA), SLA tracking, escalation engine            |
-| **Diagnostician** | Root cause analysis | Hypothesis generation, evidence ranking, runbook matching        |
-| **Healer**      | Remediation         | Blast radius assessment, approval gate, rollback engine            |
-| **Historian**   | Knowledge retention | Incident recording, pattern detection, knowledge decay             |
+### Shared Packages
+
+| Package | Purpose |
+|---------|---------|
+| `@orchestrix/shared` | Branded types (`IncidentId`, `ServiceId`), tagged errors, domain constants |
+| `@orchestrix/graph-memory` | CQRS + event sourcing graph (entities, relations, projections) |
+| `@orchestrix/blueprint-engine` | DFA for incident lifecycle states, saga execution with compensation |
+| `@orchestrix/holon-runtime` | Actor model (mailbox, message processing, supervisor trees) |
+| `@orchestrix/circuit-breaker` | Circuit breaker (sliding window, 5 failure types) + token bucket rate limiter |
+| `@orchestrix/observability` | Structured logger, metrics collector, OTel-compatible tracing |
+| `@orchestrix/temporal-workflows` | Incident saga types, workflow/activity interfaces, task queues |
+| `@orchestrix/incident-pipeline` | Synchronous pipeline chaining all holon domain functions |
+
+---
 
 ## API Endpoints
 
-| Method | Path                              | Description                        |
-|--------|-----------------------------------|------------------------------------|
-| GET    | `/health/live`                    | Liveness probe                     |
-| GET    | `/health/ready`                   | Readiness probe (postgres, temporal, redis) |
-| GET    | `/api/v1/incidents`               | List incidents                     |
-| GET    | `/api/v1/incidents/:id`           | Get incident by ID                 |
-| POST   | `/api/v1/incidents`               | Intake incident (triggers pipeline)|
-| GET    | `/api/v1/graph/entities`          | List graph entities                |
-| GET    | `/api/v1/graph/entities/:id/traverse` | Traverse graph from entity     |
-| GET    | `/api/v1/graph/stats`             | Graph memory statistics            |
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/health/live` | Liveness probe |
+| GET | `/health/ready` | Readiness probe (postgres, temporal, redis) |
+| GET | `/api/v1/incidents` | List incidents |
+| GET | `/api/v1/incidents/:id` | Get incident by ID |
+| POST | `/api/v1/incidents` | Intake incident (triggers pipeline) |
+| GET | `/api/v1/graph/entities` | List graph entities |
+| GET | `/api/v1/graph/entities/:id/traverse` | Traverse graph from entity |
+| GET | `/api/v1/graph/stats` | Graph memory statistics |
 
 ### POST /api/v1/incidents
 
@@ -98,18 +178,7 @@ Each holon is a self-contained agent with `domain/`, `api/`, `infra/`, and `resi
 
 Response includes severity classification, routing decision, approval gate result, hypothesis analysis, and event count.
 
-## Shared Packages
-
-| Package                | Purpose                                                |
-|------------------------|--------------------------------------------------------|
-| `@orchestrix/shared`   | Branded types (`IncidentId`, `ServiceId`), tagged errors, domain constants |
-| `@orchestrix/graph-memory` | CQRS + event sourcing graph (entities, relations, projections) |
-| `@orchestrix/blueprint-engine` | DFA for incident lifecycle states, saga execution with compensation |
-| `@orchestrix/holon-runtime` | Actor model (mailbox, message processing, supervisor trees) |
-| `@orchestrix/circuit-breaker` | Circuit breaker (sliding window, 5 failure types) + token bucket rate limiter |
-| `@orchestrix/observability` | Structured logger, metrics collector, OTel-compatible tracing |
-| `@orchestrix/temporal-workflows` | Incident saga types, workflow/activity interfaces, task queues |
-| `@orchestrix/incident-pipeline` | Synchronous pipeline chaining all holon domain functions |
+---
 
 ## Graph Memory Schema
 
@@ -121,6 +190,8 @@ Event-sourced graph database tracking incident knowledge:
 
 All state changes are persisted as `GraphEvent`s (`EntityCreated`, `RelationCreated`, etc.) and materialized into read-side projections.
 
+---
+
 ## Incident Lifecycle (DFA)
 
 ```
@@ -131,31 +202,11 @@ DETECTED -> DIAGNOSING -> ASSESSING -> HEALING -> VERIFYING -> RESOLVED
 
 Transitions are validated by the blueprint engine DFA. Invalid transitions produce typed `InvalidTransition` errors.
 
-## Tech Stack
+---
 
-- **Runtime:** Node.js >= 22, TypeScript 5.9 (strict mode, branded types)
-- **Domain logic:** Effect-TS v3 (`Effect.gen`, `Context.Tag`, `Layer`, tagged errors)
-- **Workflows:** Temporal (saga orchestration, durable execution)
-- **HTTP:** Fastify 5
-- **Observability:** OpenTelemetry collector, Grafana
-- **Storage:** PostgreSQL 16, Redis 7
-- **Testing:** Vitest 4 (264 tests)
-- **Monorepo:** pnpm workspaces, TypeScript project references
+## Testes / Tests
 
-## Design Patterns
-
-- **Holonic architecture** -- self-contained agents with domain/api/infra/resilience layers
-- **Functional core, imperative shell** -- pure domain functions at the center, side effects at boundaries
-- **Event sourcing + CQRS** -- graph state from event replay, projections for reads
-- **Saga pattern** -- multi-step remediation with compensation (rollback)
-- **Circuit breaker** -- fault isolation for external service calls
-- **Actor model** -- mailbox-based message processing with supervisor trees
-- **Branded types** -- `IncidentId`, `ServiceId`, etc. prevent primitive confusion at compile time
-- **Tagged errors** -- `IncidentNotFound`, `DiagnosisFailed`, etc. for exhaustive error handling
-- **DFA state machine** -- validated incident lifecycle transitions
-- **Knowledge decay** -- relation weights decrease over time, keeping the graph relevant
-
-## Commands
+264 testes passando / 264 tests passing
 
 ```bash
 pnpm test              # run all tests
