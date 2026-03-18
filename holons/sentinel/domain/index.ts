@@ -27,3 +27,22 @@ export class SentinelService extends Context.Tag("SentinelService")<
   SentinelService,
   SentinelDomain
 >() {}
+
+export { detectAnomaly, ANOMALY_STATUS, ANOMALY_SEVERITY, ANOMALY_TYPE } from "./anomaly-detector.js"
+export type {
+  AnomalyResult,
+  AnomalyStatus,
+  AnomalySeverity,
+  AnomalyType,
+  ThresholdConfig,
+  MetricSample,
+} from "./anomaly-detector.js"
+
+export { correlateAlerts } from "./alert-correlator.js"
+export type { CorrelatedAlertGroup } from "./alert-correlator.js"
+
+export { filterNoise } from "./noise-filter.js"
+export type { NoiseFilterConfig } from "./noise-filter.js"
+
+export { classifySeverity, SERVICE_TIER } from "./severity-classifier.js"
+export type { ServiceTier, IncidentContext, SeverityClassification } from "./severity-classifier.js"

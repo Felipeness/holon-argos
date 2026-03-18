@@ -29,3 +29,31 @@ export class CoordinatorService extends Context.Tag("CoordinatorService")<
   CoordinatorService,
   CoordinatorDomain
 >() {}
+
+export {
+  routeIncident,
+  isValidTransition,
+  getTargetHolon,
+} from "./incident-router.js"
+
+export type { RoutingDecision } from "./incident-router.js"
+
+export {
+  evaluateEscalation,
+  ESCALATION_TARGETS,
+} from "./escalation-engine.js"
+
+export type {
+  EscalationDecision,
+  EscalationTarget,
+} from "./escalation-engine.js"
+
+export {
+  calculateSLAMetrics,
+  calculateAllSeverities,
+} from "./sla-tracker.js"
+
+export type {
+  IncidentTimestamp,
+  SLAMetrics,
+} from "./sla-tracker.js"

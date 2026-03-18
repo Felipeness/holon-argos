@@ -39,3 +39,27 @@ export class HistorianService extends Context.Tag("HistorianService")<
   HistorianService,
   HistorianDomain
 >() {}
+
+export {
+  recordIncidentEvent,
+  buildEventSequence,
+  INCIDENT_EVENT_TYPES,
+} from "./incident-recorder.js"
+
+export type {
+  IncidentLifecycleEvent,
+  IncidentEventType,
+} from "./incident-recorder.js"
+
+export { detectPatterns } from "./pattern-detector.js"
+
+export type { PatternMatch } from "./pattern-detector.js"
+
+export {
+  applyDecay,
+  applyDecayToAll,
+  filterByMinWeight,
+  sortByWeight,
+} from "./knowledge-decay.js"
+
+export type { DecayedRelation } from "./knowledge-decay.js"
