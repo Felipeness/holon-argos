@@ -31,7 +31,7 @@ services:
     ports:
       - "7233:7233"
     environment:
-      DB: postgresql
+      DB: postgres12
       DB_PORT: "5432"
       POSTGRES_USER: orchestrix
       POSTGRES_PWD: orchestrix_dev
