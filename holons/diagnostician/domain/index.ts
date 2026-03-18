@@ -25,3 +25,12 @@ export class DiagnosticianService extends Context.Tag("DiagnosticianService")<
   DiagnosticianService,
   DiagnosticianDomain
 >() {}
+
+export { generateHypotheses } from "./hypothesis-generator.js"
+export type { IncidentData, AlertSignal, MetricSignal, Hypothesis } from "./hypothesis-generator.js"
+
+export { rankHypotheses, EVIDENCE_WEIGHT, EVIDENCE_TYPE } from "./hypothesis-ranker.js"
+export type { Evidence, EvidenceWeight, EvidenceType, RankedHypothesis } from "./hypothesis-ranker.js"
+
+export { matchRunbooks, RUNBOOK_CATEGORY } from "./runbook-matcher.js"
+export type { RunbookEntry, RunbookMatch, RunbookCategory } from "./runbook-matcher.js"
