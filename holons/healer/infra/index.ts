@@ -11,3 +11,6 @@ export const REMEDIATION_ACTIONS = [
 ] as const
 
 export type RemediationAction = (typeof REMEDIATION_ACTIONS)[number]
+
+export { applyFixWithClaude, FixError } from './claude-fixer.js'
+export type { FixRequest, FixResult } from './claude-fixer.js'
