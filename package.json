@@ -18,8 +18,10 @@
   "dependencies": {
     "@effect/platform": "^0.95.0",
     "@effect/schema": "^0.75.5",
+    "@types/pg": "^8.18.0",
     "@vitest/coverage-v8": "^4.1.0",
     "effect": "^3.20.0",
+    "pg": "^8.20.0",
     "ts-pattern": "^5.9.0",
     "typescript": "^5.9.3",
     "vitest": "^4.1.0",
