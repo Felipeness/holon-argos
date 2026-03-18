@@ -176,7 +176,68 @@ The API starts on `http://localhost:8080`.
 }
 ```
 
-Response includes severity classification, routing decision, approval gate result, hypothesis analysis, and event count.
+### Demo
+
+```bash
+# Start the API
+npx tsx api/src/server.ts &
+sleep 3
+
+# Health check
+curl -s http://localhost:8080/health/live
+# => {"status":"alive","timestamp":"..."}
+
+# Create incident with full pipeline
+curl -s -X POST http://localhost:8080/api/v1/incidents \
+  -H "Content-Type: application/json" \
+  -d '{
+    "serviceId": "svc-payments",
+    "serviceTier": "CRITICAL",
+    "userImpactPercent": 35,
+    "isServiceDown": false,
+    "durationMs": 120000,
+    "errorMessages": ["OOMKilled: container exceeded memory limit"],
+    "alerts": [{"source": "prometheus", "message": "high memory", "labels": {}}],
+    "metrics": [{"name": "memory_usage", "value": 95, "threshold": 80}]
+  }'
+```
+
+Response (full pipeline output):
+
+```json
+{
+  "accepted": true,
+  "incidentId": "inc-1773805474077",
+  "classification": {
+    "severity": "P1",
+    "autoRemediate": true,
+    "reason": "P1 — 35% users affected, tier: CRITICAL, duration: 120s"
+  },
+  "routing": {
+    "currentStatus": "DETECTED",
+    "targetHolon": "sentinel"
+  },
+  "approval": {
+    "decision": "auto_approved",
+    "reason": "severity P1 qualifies for auto-approval (immediate action needed)"
+  },
+  "diagnosis": {
+    "hypotheses": 1,
+    "topHypothesis": {
+      "id": "oom-kill",
+      "description": "Out of memory: process killed by OOM killer",
+      "likelihood": 0.9,
+      "evidenceNeeded": ["container memory usage", "pod restart count", "heap dump analysis"]
+    },
+    "runbooks": 1
+  },
+  "timeline": {
+    "eventsRecorded": 4
+  }
+}
+```
+
+The response shows the full incident pipeline: severity classification (P1), routing decision, auto-approval for critical incidents, root cause hypothesis with evidence needed, and event count from the historian.
 
 ---
 
