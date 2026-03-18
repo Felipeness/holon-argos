@@ -8,6 +8,7 @@
     { "path": "packages/circuit-breaker" },
     { "path": "packages/observability" },
     { "path": "packages/temporal-workflows" },
+    { "path": "packages/incident-pipeline" },
     { "path": "holons/sentinel" },
     { "path": "holons/diagnostician" },
     { "path": "holons/healer" },

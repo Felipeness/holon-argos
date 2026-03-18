@@ -227,6 +227,15 @@ importers:
         specifier: workspace:*
         version: link:../shared
 
+  packages/incident-pipeline:
+    dependencies:
+      '@orchestrix/graph-memory':
+        specifier: workspace:*
+        version: link:../graph-memory
+      '@orchestrix/shared':
+        specifier: workspace:*
+        version: link:../shared
+
   packages/observability:
     dependencies:
       '@orchestrix/shared':

@@ -11,6 +11,7 @@ export default defineConfig({
       "@orchestrix/circuit-breaker": path.resolve(__dirname, "packages/circuit-breaker/src/index.ts"),
       "@orchestrix/observability": path.resolve(__dirname, "packages/observability/src/index.ts"),
       "@orchestrix/temporal-workflows": path.resolve(__dirname, "packages/temporal-workflows/src/index.ts"),
+      "@orchestrix/incident-pipeline": path.resolve(__dirname, "packages/incident-pipeline/src/index.ts"),
     },
   },
   test: {
