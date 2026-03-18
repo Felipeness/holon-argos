@@ -5,13 +5,13 @@
 [![Effect-TS](https://img.shields.io/badge/Effect--TS-v3-purple)]()
 [![License](https://img.shields.io/badge/license-MIT-green)]()
 
-## O que e isso? / What is this?
+## O que é isso? / What is this?
 
-Quando um sistema cai as 3h da manha, alguem precisa acordar, olhar logs, entender o que aconteceu, aplicar um fix e verificar se funcionou. O orchestrix-agents faz tudo isso sozinho.
+Quando um sistema cai às 3h da manhã, alguém precisa acordar, olhar logs, entender o que aconteceu, aplicar um fix e verificar se funcionou. O orchestrix-agents faz tudo isso sozinho.
 
-E um sistema de agentes de IA que monitora sua infraestrutura, detecta problemas automaticamente, descobre a causa raiz usando inteligencia artificial, e aplica a correcao — tudo sem intervencao humana para incidentes criticos. Para problemas menores, ele diagnostica e pede aprovacao antes de agir.
+É um sistema de agentes de IA que monitora sua infraestrutura, detecta problemas automaticamente, descobre a causa raiz usando inteligência artificial, e aplica a correção — tudo sem intervenção humana para incidentes críticos. Para problemas menores, ele diagnostica e pede aprovação antes de agir.
 
-Cada agente e um holon especializado: o sentinel vigia, o diagnostician investiga, o healer corrige, e o historian aprende com cada incidente para ser mais inteligente no proximo.
+Cada agente é um holon especializado: o sentinel vigia, o diagnostician investiga, o healer corrige, e o historian aprende com cada incidente para ser mais inteligente no próximo.
 
 ---
 
@@ -25,7 +25,7 @@ Each agent is a specialized holon: the sentinel watches, the diagnostician inves
 
 ## O problema que resolve / The problem it solves
 
-Incidentes de producao custam caro — em tempo, em dinheiro e em sono. O MTTR (tempo medio de resolucao) medio da industria e de horas. Com agentes holonomicos que aprendem com incidentes passados via memoria em grafo, o orchestrix-agents pode reduzir esse tempo para minutos.
+Incidentes de produção custam caro — em tempo, em dinheiro e em sono. O MTTR (tempo médio de resolução) médio da indústria é de horas. Com agentes holonômicos que aprendem com incidentes passados via memória em grafo, o orchestrix-agents pode reduzir esse tempo para minutos.
 
 Production incidents are expensive — in time, money, and sleep. The industry average MTTR (Mean Time to Resolve) is hours. With holonomic agents that learn from past incidents via graph memory, orchestrix-agents can reduce this to minutes.
 
